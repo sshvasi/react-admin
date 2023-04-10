@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    image: "node:alpine"
+    user: "node"
+    ports:
+      - "127.0.0.1:7777:7777"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    command: "sh -c \"npm ci && npm run dev\""
