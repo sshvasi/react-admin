@@ -5,12 +5,14 @@ import jsonServerProvider from 'ra-data-json-server';
 import { UserList } from './users';
 import { PostCreate, PostEdit, PostList } from './posts';
 import { Dashboard } from './Dashboard';
+import { authProvider } from './authProvider';
 // import { dataProvider } from './dataProvider';
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 export const App = () => (
   <Admin
+    authProvider={authProvider}
     dataProvider={dataProvider}
     dashboard={Dashboard}
   >
